@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def todo_home_view(request):
+
+    return render(request, "todo/home.html")
