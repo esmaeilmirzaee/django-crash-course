@@ -8,5 +8,15 @@
     </head>
     <body>
         <h1>Welcome</h1>
+        {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <span> {{task.task_name}} </span>
+                <span>{{task.due_date}}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </body>
 </html>
