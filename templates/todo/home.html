@@ -12,6 +12,9 @@
         <ul>
             {% for task in tasks %}
             <li>
+                <a href="{{task.id}}/update" style="margin-right: 20px"
+                    >Update</a
+                >
                 <span> {{task.task_name}} </span>
                 <span>{{task.due_date}}</span>
                 <span style="color: dodgerblue; margin-left: 20px"

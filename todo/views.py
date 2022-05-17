@@ -36,3 +36,14 @@ def todo_create_view(request):
 
     context['form'] = form
     return render(request, 'todo/create.html', context=context)
+
+
+def todo_update_view(request, id):
+    todo = Todo.objects.get(id=id)
+    form = TodoForm(request.POST or None, instance=todo)
+    if form.is_valid():
+        form.save()
+        return redirect('/', id)
+
+    context = {'form': form}
+    return render(request, 'todo/update.html', context)
