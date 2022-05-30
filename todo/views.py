@@ -47,3 +47,8 @@ def todo_update_view(request, id):
 
     context = {'form': form}
     return render(request, 'todo/update.html', context)
+
+
+def todo_delete_view(request, id):
+    todo = Todo.objects.get(id=id)
+    todo.delete()

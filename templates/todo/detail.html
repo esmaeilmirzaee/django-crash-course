@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ task.task_name }}</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="card">
-                <div class="card-title"><h1>{{task.task_name}}</h1></div>
-                <div class="card-content">{{task.due_date}}</div>
-            </div>
-        </div>
-    </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<div class="card">
+    <div class="card-title"><h1>{{task.task_name}}</h1></div>
+    <div class="card-body">{{task.due_date}}</div>
+    <div class="footer">
+        <button class="btn btn-primary">Update</button>
+        <button class="btn btn-danger">Delete</button>
+    </div>
+</div>
+{% endblock content %}
